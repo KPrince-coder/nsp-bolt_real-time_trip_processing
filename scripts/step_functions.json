@@ -1,0 +1,26 @@
+{
+    "Comment": "A description of my state machine",
+    "StartAt": "Glue StartJobRun",
+    "States": {
+      "Glue StartJobRun": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::glue:startJobRun",
+        "Arguments": {
+          "JobName": "TripsKPIs"
+        },
+        "Next": "Alert"
+      },
+      "Alert": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Arguments": {
+          "TopicArn": "arn:aws:sns:eu-west-1:405894843300:etl",
+          "Message": {
+            "messagekey1": "success"
+          }
+        },
+        "End": true
+      }
+    },
+    "QueryLanguage": "JSONata"
+  }
