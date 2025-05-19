@@ -1,0 +1,28 @@
+# Environment
+.env
+# System
+.vscode
+.vscode-server
+.vscode-server-insiders
+.vscode-server-stable
+.vscode-server-insiders-stable
+.vscode-server-insiders-stable
+.vscode-server-insiders-stable
+.vscode-server-insiders-stable
+.vscode-server-insiders-stable
+.vscode-server-insiders-stable
+.vscode-server-insiders-stable
+.vscode-server-insiders-stable
+.vscode-server-insiders-stable
+
+.venv
+
+# Python
+__pycache__
+.pytest_cache
+.ipynb_checkpoints
+.DS_Store
+
+
+.qodo
+.trunk
