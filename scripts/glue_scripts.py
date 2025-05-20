@@ -28,14 +28,18 @@ s3 = boto3.client("s3")
 
 
 # --- Function to read data from DynamoDB ---
-def scan_dynamodb_table(table_name):
+def scan_dynamodb_table(table_name: str) -> pd.DataFrame:
     """
-    Scans a DynamoDB table and returns all items.
-    Handles pagination automatically.
-    Note: Scanning can be inefficient for large tables.
-          For very large tables, consider using Glue PySpark or
-          exporting DynamoDB data to S3 first.
+    Scans a DynamoDB table and returns all items as a pandas DataFrame.
+
+    Args:
+        table_name (str): Name of the DynamoDB table to scan
+
+    Returns:
+        pd.DataFrame: DataFrame containing all items from the DynamoDB table
+            or None if there's an error
     """
+
     print(f"Scanning DynamoDB table: {table_name}")
     items = []
     last_evaluated_key = None
@@ -249,7 +253,7 @@ if __name__ == "__main__":
         )
 
         # If needed, also write a "latest" version to a fixed path for easy access
-        latest_key = f"daily_kpis/latest/daily_trip_kpis.json"
+        latest_key = "daily_kpis/latest/daily_trip_kpis.json"
         s3.put_object(
             Bucket=S3_BUCKET_NAME,
             Key=latest_key,
