@@ -196,17 +196,9 @@ erDiagram
 
 ```mermaid
 flowchart TD
-    [*] --> GlueStartJobRun
-    GlueStartJobRun --> Complete
-    Complete --> [*]
-
-    state GlueStartJobRun {
-        description: "Start Glue ETL job"
-    }
-
-    state Complete {
-        description: "Mark workflow as complete"
-    }
+    Start((Start)) --> GlueStartJobRun["Start Glue ETL job"]
+    GlueStartJobRun --> Complete["Mark workflow as complete"]
+    Complete --> End((End))
 ```
 
 ## Setup and Deployment
