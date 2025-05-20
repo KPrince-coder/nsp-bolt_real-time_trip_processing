@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "report_generated": "2025-04-24T12:02:06.984904",
+    "report_timestamp": 1745496126,
+    "report_date": "2025-04-24",
+    "report_time": "12:02:06",
+    "source_table": "trips",
+    "record_count": 4468,
+    "date_range": {
+      "start_date": "2024-05-25",
+      "end_date": "2024-05-25"
+    },
+    "kpi_count": 1
+  },
+  "daily_kpis": [
+    {
+      "pickup_date": "2024-05-25",
+      "total_fare": 245273.31744125657,
+      "trip_count": 4468,
+      "average_fare": 54.89555000923379,
+      "maximum_fare": 99.9901266575316,
+      "minimum_fare": 10.036694629486496
+    }
+  ]
+}
