@@ -195,7 +195,7 @@ erDiagram
   2. Complete: Marks the workflow as complete
 
 ```mermaid
-stateDiagram-v2
+flowchart TD
     [*] --> GlueStartJobRun
     GlueStartJobRun --> Complete
     Complete --> [*]
